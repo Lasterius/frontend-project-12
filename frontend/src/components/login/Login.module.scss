@@ -1,0 +1,88 @@
+@import '../../_vars.scss';
+
+.form__wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 35%;
+  height: 50%;
+  background-color: $lyellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 10px double $dblue;
+  border-radius: 30%;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .form__item {
+    position: relative;
+    margin-bottom: 20px;
+
+    .form__label {
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      transition: all 0.2s;
+      left: 0;
+      top: 5px;
+      z-index: 2;
+      width: 100%;
+      color: $dblue;
+      font-size: 16px;
+    }
+
+    .form__input {
+      display: inline-block;
+      width: 90%;
+      height: 30px;
+      padding: 5px;
+      border: none;
+      border-bottom: 2px solid $dblue;
+      background-color: $lyellow;
+      outline: none;
+
+      &:hover {
+        border-color: $lblue;
+        transition: all 0.2s;
+      }
+
+      &:focus + .form__label,
+      &.not_empty + .form__label {
+        top: -10px;
+        left: -50px;
+        font-size: 10px;
+        transition: all 0.2s;
+      }
+    }
+  }
+}
+
+.button {
+  width: 160px;
+  height: 30px;
+  border: 1px solid $dblue;
+  background-color: $lyellow;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $dblue;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $green;
+    transition: all 0.2s;
+    color: $lyellow;
+  }
+}
